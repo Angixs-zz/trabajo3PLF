@@ -1,0 +1,83 @@
+EJERCICIO 3 - AGENCIA DE VIAJES (SWI-PROLOG)
+===========================================
+
+Carga el archivo desde esta carpeta:
+?- [ejercicio3_bd].
+
+Los comandos listar_* imprimen TODOS los resultados automáticamente. No
+necesitas presionar punto y coma para ver los siguientes registros.
+Ejecuta una consulta por vez y presiona Enter. Hay una línea en blanco
+entre grupos de consultas.
+
+1. PAIS
+?- listar_paises_con_ciudades.
+?- listar_cantidad_ciudades_por_pais.
+
+2. CIUDAD
+?- listar_ciudades_de_pais.
+?- listar_destinos_conocidos.
+
+3. AEROPUERTO
+?- listar_aeropuertos_de_ciudad.
+?- listar_vuelos_que_salen_de.
+
+4. AEROLINEA
+?- listar_aerolineas_de_pais.
+?- listar_vuelos_por_aerolinea.
+
+5. AVION
+?- listar_aviones_de_alta_capacidad.
+?- listar_vuelos_con_avion.
+
+6. VUELO
+?- listar_vuelos_baratos.
+?- listar_vuelos_internacionales.
+
+7. HOTEL
+?- listar_hoteles_por_categoria.
+?- listar_hoteles_con_habitacion_barata.
+
+8. HABITACION
+?- listar_habitaciones_por_tipo.
+?- listar_habitaciones_premium.
+
+9. CLIENTE
+?- listar_clientes_por_pais.
+?- listar_clientes_con_reservas.
+
+10. RESERVA
+?- listar_reservas_confirmadas.
+?- listar_gasto_confirmado_cliente.
+
+11. PASAJERO
+?- listar_pasajeros_de_reserva.
+?- listar_reservas_con_varios_pasajeros.
+
+12. PAGO
+?- listar_pagos_por_metodo.
+?- listar_total_recaudado.
+
+13. DESTINO
+?- listar_destinos_de_pais.
+?- listar_destinos_mejor_calificados.
+
+14. ACTIVIDAD
+?- listar_actividades_por_destino.
+?- listar_actividades_economicas.
+
+15. OPINION
+?- listar_opiniones_de_cliente.
+?- listar_promedio_opiniones_destino.
+
+CONSULTAS COMPLEJAS (se pueden ejecutar como consultas normales)
+-----------------------------------------------------------------
+% Cliente, reserva, aerolinea, ruta, pago y ciudad de llegada:
+?- cliente(C, Cliente, _, _), reserva(R, C, V, confirmada, Total),
+   vuelo(V, A, _, OrigenID, DestinoID, _), aerolinea(A, Aerolinea, _),
+   aeropuerto(OrigenID, _, CiudadOrigenID), ciudad(CiudadOrigenID, Origen, _),
+   aeropuerto(DestinoID, _, CiudadDestinoID), ciudad(CiudadDestinoID, Llegada, _),
+   pago(_, R, Monto, _).
+
+% Clientes con reservaciones pendientes de mas de $3,000:
+?- cliente(C, Cliente, _, _), reserva(_, C, Vuelo, pendiente, Total),
+   Total > 3000, vuelo(Vuelo, A, _, _, _, _), aerolinea(A, Aerolinea, _).
