@@ -4,6 +4,37 @@ EJERCICIO 3 - AGENCIA DE VIAJES (SWI-PROLOG)
 Carga el archivo desde esta carpeta:
 ?- [ejercicio3_bd].
 
+El archivo .pl esta organizado por tabla: primero todos los hechos de pais,
+despues todos los de ciudad y asi sucesivamente. Cada hecho ocupa una linea,
+los IDs son consecutivos desde 1 y ninguna fila se genera al cargarlo.
+
+Cantidad de registros escritos por tabla:
+  01 pais/2         70       09 cliente/4     90
+  02 ciudad/3       76       10 reserva/5    110
+  03 aeropuerto/3   76       11 pasajero/3   102
+  04 aerolinea/3    76       12 pago/4       101
+  05 avion/3        78       13 destino/3     82
+  06 vuelo/6        88       14 actividad/4   84
+  07 hotel/4        82       15 opinion/4     90
+  08 habitacion/4   86
+
+Para revisar las filas completas de una tabla en Prolog:
+?- listing(pais/2).
+?- listing(ciudad/3).
+?- listing(aeropuerto/3).
+?- listing(aerolinea/3).
+?- listing(avion/3).
+?- listing(vuelo/6).
+?- listing(hotel/4).
+?- listing(habitacion/4).
+?- listing(cliente/4).
+?- listing(reserva/5).
+?- listing(pasajero/3).
+?- listing(pago/4).
+?- listing(destino/3).
+?- listing(actividad/4).
+?- listing(opinion/4).
+
 Los comandos listar_* imprimen TODOS los resultados automáticamente. No
 necesitas presionar punto y coma para ver los siguientes registros.
 Ejecuta una consulta por vez y presiona Enter. Hay una línea en blanco
@@ -14,7 +45,7 @@ entre grupos de consultas.
 ?- listar_cantidad_ciudades_por_pais.
 
 2. CIUDAD
-?- listar_ciudades_de_pais.
+?- listar_ciudades_con_hoteles.
 ?- listar_destinos_conocidos.
 
 3. AEROPUERTO
@@ -59,7 +90,7 @@ entre grupos de consultas.
 
 13. DESTINO
 ?- listar_destinos_de_pais.
-?- listar_destinos_mejor_calificados.
+?- listar_destinos_con_actividades.
 
 14. ACTIVIDAD
 ?- listar_actividades_por_destino.
@@ -69,15 +100,10 @@ entre grupos de consultas.
 ?- listar_opiniones_de_cliente.
 ?- listar_promedio_opiniones_destino.
 
-CONSULTAS COMPLEJAS (se pueden ejecutar como consultas normales)
+CONSULTAS COMPLEJAS (tambien imprimen todas las filas sin pulsar ;)
 -----------------------------------------------------------------
-% Cliente, reserva, aerolinea, ruta, pago y ciudad de llegada:
-?- cliente(C, Cliente, _, _), reserva(R, C, V, confirmada, Total),
-   vuelo(V, A, _, OrigenID, DestinoID, _), aerolinea(A, Aerolinea, _),
-   aeropuerto(OrigenID, _, CiudadOrigenID), ciudad(CiudadOrigenID, Origen, _),
-   aeropuerto(DestinoID, _, CiudadDestinoID), ciudad(CiudadDestinoID, Llegada, _),
-   pago(_, R, Monto, _).
+% Cliente, aerolinea, origen, destino, total de reserva y pago:
+?- listar_itinerarios_pagados.
 
 % Clientes con reservaciones pendientes de mas de $3,000:
-?- cliente(C, Cliente, _, _), reserva(_, C, Vuelo, pendiente, Total),
-   Total > 3000, vuelo(Vuelo, A, _, _, _, _), aerolinea(A, Aerolinea, _).
+?- listar_reservas_pendientes_costosas.
