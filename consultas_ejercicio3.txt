@@ -1,6 +1,8 @@
 EJERCICIO 3 - AGENCIA DE VIAJES (SWI-PROLOG)
 ===========================================
 
+Para entender que hace cada consulta, lee explicacion_consultas_ejercicio3.txt.
+
 Carga el archivo desde esta carpeta:
 ?- [ejercicio3_bd].
 
