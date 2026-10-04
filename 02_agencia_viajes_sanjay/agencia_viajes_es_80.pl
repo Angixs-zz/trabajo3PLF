@@ -66,46 +66,46 @@ ubicacion(39, 'Nairobi', null, 'Kenya').
 ubicacion(40, 'Auckland', null, 'New Zealand').
 
 % REGISTROS AGREGADOS (datos sinteticos, no pertenecen a la fuente)
-ubicacion(41, 'Merida', 'Estado de Mexico', 'Mexico').
-ubicacion(42, 'Oaxaca', 'Region Centro', 'Mexico').
-ubicacion(43, 'Monterrey', 'Estado de Mexico', 'Mexico').
-ubicacion(44, 'Guadalajara', 'Region Centro', 'Mexico').
-ubicacion(45, 'Puebla', 'Estado de Mexico', 'Mexico').
-ubicacion(46, 'Queretaro', 'Region Centro', 'Mexico').
+ubicacion(41, 'Merida', 'Yucatan', 'Mexico').
+ubicacion(42, 'Oaxaca', 'Oaxaca', 'Mexico').
+ubicacion(43, 'Monterrey', 'Nuevo Leon', 'Mexico').
+ubicacion(44, 'Guadalajara', 'Jalisco', 'Mexico').
+ubicacion(45, 'Puebla', 'Puebla', 'Mexico').
+ubicacion(46, 'Queretaro', 'Queretaro', 'Mexico').
 ubicacion(47, 'Toluca', 'Estado de Mexico', 'Mexico').
-ubicacion(48, 'Tijuana', 'Region Centro', 'Mexico').
-ubicacion(49, 'Ensenada', 'Estado de Mexico', 'Mexico').
-ubicacion(50, 'La Paz', 'Region Centro', 'Mexico').
-ubicacion(51, 'Chihuahua', 'Estado de Mexico', 'Mexico').
-ubicacion(52, 'Hermosillo', 'Region Centro', 'Mexico').
-ubicacion(53, 'Culiacan', 'Estado de Mexico', 'Mexico').
-ubicacion(54, 'Mazatlan', 'Region Centro', 'Mexico').
-ubicacion(55, 'Acapulco', 'Estado de Mexico', 'Mexico').
-ubicacion(56, 'Veracruz', 'Region Centro', 'Mexico').
-ubicacion(57, 'Villahermosa', 'Estado de Mexico', 'Mexico').
-ubicacion(58, 'Tuxtla Gutierrez', 'Region Centro', 'Mexico').
-ubicacion(59, 'Campeche', 'Estado de Mexico', 'Mexico').
-ubicacion(60, 'Morelia', 'Region Centro', 'Mexico').
-ubicacion(61, 'Zacatecas', 'Estado de Mexico', 'Mexico').
-ubicacion(62, 'Durango', 'Region Centro', 'Mexico').
-ubicacion(63, 'Tepic', 'Estado de Mexico', 'Mexico').
-ubicacion(64, 'Colima', 'Region Centro', 'Mexico').
-ubicacion(65, 'Manzanillo', 'Estado de Mexico', 'Mexico').
-ubicacion(66, 'Puerto Vallarta', 'Region Centro', 'Mexico').
-ubicacion(67, 'San Luis Potosi', 'Estado de Mexico', 'Mexico').
-ubicacion(68, 'Aguascalientes', 'Region Centro', 'Mexico').
-ubicacion(69, 'Leon', 'Estado de Mexico', 'Mexico').
-ubicacion(70, 'Guanajuato', 'Region Centro', 'Mexico').
-ubicacion(71, 'Pachuca', 'Estado de Mexico', 'Mexico').
-ubicacion(72, 'Cuernavaca', 'Region Centro', 'Mexico').
-ubicacion(73, 'Taxco', 'Estado de Mexico', 'Mexico').
-ubicacion(74, 'Tlaxcala', 'Region Centro', 'Mexico').
-ubicacion(75, 'Saltillo', 'Estado de Mexico', 'Mexico').
-ubicacion(76, 'Torreon', 'Region Centro', 'Mexico').
-ubicacion(77, 'Reynosa', 'Estado de Mexico', 'Mexico').
-ubicacion(78, 'Matamoros', 'Region Centro', 'Mexico').
-ubicacion(79, 'Nuevo Laredo', 'Estado de Mexico', 'Mexico').
-ubicacion(80, 'Ciudad Juarez', 'Region Centro', 'Mexico').
+ubicacion(48, 'Tijuana', 'Baja California', 'Mexico').
+ubicacion(49, 'Ensenada', 'Baja California', 'Mexico').
+ubicacion(50, 'La Paz', 'Baja California Sur', 'Mexico').
+ubicacion(51, 'Chihuahua', 'Chihuahua', 'Mexico').
+ubicacion(52, 'Hermosillo', 'Sonora', 'Mexico').
+ubicacion(53, 'Culiacan', 'Sinaloa', 'Mexico').
+ubicacion(54, 'Mazatlan', 'Sinaloa', 'Mexico').
+ubicacion(55, 'Acapulco', 'Guerrero', 'Mexico').
+ubicacion(56, 'Veracruz', 'Veracruz', 'Mexico').
+ubicacion(57, 'Villahermosa', 'Tabasco', 'Mexico').
+ubicacion(58, 'Tuxtla Gutierrez', 'Chiapas', 'Mexico').
+ubicacion(59, 'Campeche', 'Campeche', 'Mexico').
+ubicacion(60, 'Morelia', 'Michoacan', 'Mexico').
+ubicacion(61, 'Zacatecas', 'Zacatecas', 'Mexico').
+ubicacion(62, 'Durango', 'Durango', 'Mexico').
+ubicacion(63, 'Tepic', 'Nayarit', 'Mexico').
+ubicacion(64, 'Colima', 'Colima', 'Mexico').
+ubicacion(65, 'Manzanillo', 'Colima', 'Mexico').
+ubicacion(66, 'Puerto Vallarta', 'Jalisco', 'Mexico').
+ubicacion(67, 'San Luis Potosi', 'San Luis Potosi', 'Mexico').
+ubicacion(68, 'Aguascalientes', 'Aguascalientes', 'Mexico').
+ubicacion(69, 'Leon', 'Guanajuato', 'Mexico').
+ubicacion(70, 'Guanajuato', 'Guanajuato', 'Mexico').
+ubicacion(71, 'Pachuca', 'Hidalgo', 'Mexico').
+ubicacion(72, 'Cuernavaca', 'Morelos', 'Mexico').
+ubicacion(73, 'Taxco', 'Guerrero', 'Mexico').
+ubicacion(74, 'Tlaxcala', 'Tlaxcala', 'Mexico').
+ubicacion(75, 'Saltillo', 'Coahuila', 'Mexico').
+ubicacion(76, 'Torreon', 'Coahuila', 'Mexico').
+ubicacion(77, 'Reynosa', 'Tamaulipas', 'Mexico').
+ubicacion(78, 'Matamoros', 'Tamaulipas', 'Mexico').
+ubicacion(79, 'Nuevo Laredo', 'Tamaulipas', 'Mexico').
+ubicacion(80, 'Ciudad Juarez', 'Chihuahua', 'Mexico').
 
 % ==============================================================
 % pasajero/6: 35 originales + 45 agregados = 80
@@ -148,21 +148,21 @@ pasajero(34, 'Heather Scott', 'Female', 39, 'heather.s@email.com', '+15557890123
 pasajero(35, 'Eric Green', 'Male', 42, 'eric.g@email.com', '+15558901234').
 
 % REGISTROS AGREGADOS (datos sinteticos, no pertenecen a la fuente)
-pasajero(36, 'Ana Lopez', 'Male', 55, 'pasajero36@ejemplo.mx', '+525500000036').
-pasajero(37, 'Luis Garcia', 'Female', 56, 'pasajero37@ejemplo.mx', '+525500000037').
-pasajero(38, 'Maria Hernandez', 'Male', 57, 'pasajero38@ejemplo.mx', '+525500000038').
-pasajero(39, 'Jorge Martinez', 'Female', 58, 'pasajero39@ejemplo.mx', '+525500000039').
-pasajero(40, 'Sofia Torres', 'Male', 19, 'pasajero40@ejemplo.mx', '+525500000040').
-pasajero(41, 'Carlos Rivera', 'Female', 20, 'pasajero41@ejemplo.mx', '+525500000041').
-pasajero(42, 'Elena Flores', 'Male', 21, 'pasajero42@ejemplo.mx', '+525500000042').
-pasajero(43, 'Diego Sanchez', 'Female', 22, 'pasajero43@ejemplo.mx', '+525500000043').
-pasajero(44, 'Fernanda Ramirez', 'Male', 23, 'pasajero44@ejemplo.mx', '+525500000044').
-pasajero(45, 'Miguel Castillo', 'Female', 24, 'pasajero45@ejemplo.mx', '+525500000045').
-pasajero(46, 'Valeria Lopez', 'Male', 25, 'pasajero46@ejemplo.mx', '+525500000046').
-pasajero(47, 'Andres Garcia', 'Female', 26, 'pasajero47@ejemplo.mx', '+525500000047').
-pasajero(48, 'Claudia Hernandez', 'Male', 27, 'pasajero48@ejemplo.mx', '+525500000048').
-pasajero(49, 'Ricardo Martinez', 'Female', 28, 'pasajero49@ejemplo.mx', '+525500000049').
-pasajero(50, 'Isabel Torres', 'Male', 29, 'pasajero50@ejemplo.mx', '+525500000050').
+pasajero(36, 'Ana Lopez', 'Female', 55, 'pasajero36@ejemplo.mx', '+525500000036').
+pasajero(37, 'Luis Garcia', 'Male', 56, 'pasajero37@ejemplo.mx', '+525500000037').
+pasajero(38, 'Maria Hernandez', 'Female', 57, 'pasajero38@ejemplo.mx', '+525500000038').
+pasajero(39, 'Jorge Martinez', 'Male', 58, 'pasajero39@ejemplo.mx', '+525500000039').
+pasajero(40, 'Sofia Torres', 'Female', 19, 'pasajero40@ejemplo.mx', '+525500000040').
+pasajero(41, 'Carlos Rivera', 'Male', 20, 'pasajero41@ejemplo.mx', '+525500000041').
+pasajero(42, 'Elena Flores', 'Female', 21, 'pasajero42@ejemplo.mx', '+525500000042').
+pasajero(43, 'Diego Sanchez', 'Male', 22, 'pasajero43@ejemplo.mx', '+525500000043').
+pasajero(44, 'Fernanda Ramirez', 'Female', 23, 'pasajero44@ejemplo.mx', '+525500000044').
+pasajero(45, 'Miguel Castillo', 'Male', 24, 'pasajero45@ejemplo.mx', '+525500000045').
+pasajero(46, 'Valeria Lopez', 'Female', 25, 'pasajero46@ejemplo.mx', '+525500000046').
+pasajero(47, 'Andres Garcia', 'Male', 26, 'pasajero47@ejemplo.mx', '+525500000047').
+pasajero(48, 'Claudia Hernandez', 'Female', 27, 'pasajero48@ejemplo.mx', '+525500000048').
+pasajero(49, 'Ricardo Martinez', 'Male', 28, 'pasajero49@ejemplo.mx', '+525500000049').
+pasajero(50, 'Isabel Torres', 'Female', 29, 'pasajero50@ejemplo.mx', '+525500000050').
 pasajero(51, 'Ana Rivera', 'Female', 30, 'pasajero51@ejemplo.mx', '+525500000051').
 pasajero(52, 'Luis Flores', 'Male', 31, 'pasajero52@ejemplo.mx', '+525500000052').
 pasajero(53, 'Maria Sanchez', 'Female', 32, 'pasajero53@ejemplo.mx', '+525500000053').
@@ -178,21 +178,21 @@ pasajero(62, 'Andres Flores', 'Male', 41, 'pasajero62@ejemplo.mx', '+52550000006
 pasajero(63, 'Claudia Sanchez', 'Female', 42, 'pasajero63@ejemplo.mx', '+525500000063').
 pasajero(64, 'Ricardo Ramirez', 'Male', 43, 'pasajero64@ejemplo.mx', '+525500000064').
 pasajero(65, 'Isabel Castillo', 'Female', 44, 'pasajero65@ejemplo.mx', '+525500000065').
-pasajero(66, 'Ana Lopez', 'Male', 45, 'pasajero66@ejemplo.mx', '+525500000066').
-pasajero(67, 'Luis Garcia', 'Female', 46, 'pasajero67@ejemplo.mx', '+525500000067').
-pasajero(68, 'Maria Hernandez', 'Male', 47, 'pasajero68@ejemplo.mx', '+525500000068').
-pasajero(69, 'Jorge Martinez', 'Female', 48, 'pasajero69@ejemplo.mx', '+525500000069').
-pasajero(70, 'Sofia Torres', 'Male', 49, 'pasajero70@ejemplo.mx', '+525500000070').
-pasajero(71, 'Carlos Rivera', 'Female', 50, 'pasajero71@ejemplo.mx', '+525500000071').
-pasajero(72, 'Elena Flores', 'Male', 51, 'pasajero72@ejemplo.mx', '+525500000072').
-pasajero(73, 'Diego Sanchez', 'Female', 52, 'pasajero73@ejemplo.mx', '+525500000073').
-pasajero(74, 'Fernanda Ramirez', 'Male', 53, 'pasajero74@ejemplo.mx', '+525500000074').
-pasajero(75, 'Miguel Castillo', 'Female', 54, 'pasajero75@ejemplo.mx', '+525500000075').
-pasajero(76, 'Valeria Lopez', 'Male', 55, 'pasajero76@ejemplo.mx', '+525500000076').
-pasajero(77, 'Andres Garcia', 'Female', 56, 'pasajero77@ejemplo.mx', '+525500000077').
-pasajero(78, 'Claudia Hernandez', 'Male', 57, 'pasajero78@ejemplo.mx', '+525500000078').
-pasajero(79, 'Ricardo Martinez', 'Female', 58, 'pasajero79@ejemplo.mx', '+525500000079').
-pasajero(80, 'Isabel Torres', 'Male', 19, 'pasajero80@ejemplo.mx', '+525500000080').
+pasajero(66, 'Ana Lopez', 'Female', 45, 'pasajero66@ejemplo.mx', '+525500000066').
+pasajero(67, 'Luis Garcia', 'Male', 46, 'pasajero67@ejemplo.mx', '+525500000067').
+pasajero(68, 'Maria Hernandez', 'Female', 47, 'pasajero68@ejemplo.mx', '+525500000068').
+pasajero(69, 'Jorge Martinez', 'Male', 48, 'pasajero69@ejemplo.mx', '+525500000069').
+pasajero(70, 'Sofia Torres', 'Female', 49, 'pasajero70@ejemplo.mx', '+525500000070').
+pasajero(71, 'Carlos Rivera', 'Male', 50, 'pasajero71@ejemplo.mx', '+525500000071').
+pasajero(72, 'Elena Flores', 'Female', 51, 'pasajero72@ejemplo.mx', '+525500000072').
+pasajero(73, 'Diego Sanchez', 'Male', 52, 'pasajero73@ejemplo.mx', '+525500000073').
+pasajero(74, 'Fernanda Ramirez', 'Female', 53, 'pasajero74@ejemplo.mx', '+525500000074').
+pasajero(75, 'Miguel Castillo', 'Male', 54, 'pasajero75@ejemplo.mx', '+525500000075').
+pasajero(76, 'Valeria Lopez', 'Female', 55, 'pasajero76@ejemplo.mx', '+525500000076').
+pasajero(77, 'Andres Garcia', 'Male', 56, 'pasajero77@ejemplo.mx', '+525500000077').
+pasajero(78, 'Claudia Hernandez', 'Female', 57, 'pasajero78@ejemplo.mx', '+525500000078').
+pasajero(79, 'Ricardo Martinez', 'Male', 58, 'pasajero79@ejemplo.mx', '+525500000079').
+pasajero(80, 'Isabel Torres', 'Female', 19, 'pasajero80@ejemplo.mx', '+525500000080').
 
 % ==============================================================
 % empleado/5: 30 originales + 50 agregados = 80
@@ -1157,36 +1157,36 @@ pago(49, 49, '2023-06-18 10:05:00', 3440.00, 'Credit Card', '9012', '12/2025').
 pago(50, 50, '2023-06-19 11:20:00', 4225.00, 'Credit Card', '0123', '03/2026').
 
 % REGISTROS AGREGADOS (datos sinteticos, no pertenecen a la fuente)
-pago(51, 51, '2024-02-07 11:00:00', 1400, 'Cash', '2051', '12/2028').
-pago(52, 52, '2024-02-08 11:00:00', 1585, 'Credit Card', null, null).
+pago(51, 51, '2024-02-07 11:00:00', 1400, 'Cash', null, null).
+pago(52, 52, '2024-02-08 11:00:00', 1585, 'Credit Card', '2052', '12/2028').
 pago(53, 53, '2024-02-09 11:00:00', 1770, 'Debit Card', '2053', '12/2028').
-pago(54, 54, '2024-02-10 11:00:00', 1955, 'Bank Transfer', '2054', '12/2028').
-pago(55, 55, '2024-02-11 11:00:00', 2140, 'Cash', '2055', '12/2028').
-pago(56, 56, '2024-02-12 11:00:00', 1685, 'Credit Card', null, null).
+pago(54, 54, '2024-02-10 11:00:00', 1955, 'Bank Transfer', null, null).
+pago(55, 55, '2024-02-11 11:00:00', 2140, 'Cash', null, null).
+pago(56, 56, '2024-02-12 11:00:00', 1685, 'Credit Card', '2056', '12/2028').
 pago(57, 57, '2024-02-13 11:00:00', 1870, 'Debit Card', '2057', '12/2028').
-pago(58, 58, '2024-02-14 11:00:00', 2055, 'Bank Transfer', '2058', '12/2028').
-pago(59, 59, '2024-02-15 11:00:00', 2240, 'Cash', '2059', '12/2028').
-pago(60, 60, '2024-02-16 11:00:00', 2425, 'Credit Card', null, null).
+pago(58, 58, '2024-02-14 11:00:00', 2055, 'Bank Transfer', null, null).
+pago(59, 59, '2024-02-15 11:00:00', 2240, 'Cash', null, null).
+pago(60, 60, '2024-02-16 11:00:00', 2425, 'Credit Card', '2060', '12/2028').
 pago(61, 61, '2024-02-17 11:00:00', 2610, 'Debit Card', '2061', '12/2028').
-pago(62, 62, '2024-02-18 11:00:00', 1430, 'Bank Transfer', '2062', '12/2028').
-pago(63, 63, '2024-02-19 11:00:00', 1615, 'Cash', '2063', '12/2028').
-pago(64, 64, '2024-02-20 11:00:00', 1160, 'Credit Card', null, null).
+pago(62, 62, '2024-02-18 11:00:00', 1430, 'Bank Transfer', null, null).
+pago(63, 63, '2024-02-19 11:00:00', 1615, 'Cash', null, null).
+pago(64, 64, '2024-02-20 11:00:00', 1160, 'Credit Card', '2064', '12/2028').
 pago(65, 65, '2024-02-21 11:00:00', 1345, 'Debit Card', '2065', '12/2028').
-pago(66, 66, '2024-02-22 11:00:00', 1530, 'Bank Transfer', '2066', '12/2028').
-pago(67, 67, '2024-02-23 11:00:00', 1715, 'Cash', '2067', '12/2028').
-pago(68, 68, '2024-02-24 11:00:00', 1900, 'Credit Card', null, null).
+pago(66, 66, '2024-02-22 11:00:00', 1530, 'Bank Transfer', null, null).
+pago(67, 67, '2024-02-23 11:00:00', 1715, 'Cash', null, null).
+pago(68, 68, '2024-02-24 11:00:00', 1900, 'Credit Card', '2068', '12/2028').
 pago(69, 69, '2024-02-25 11:00:00', 2085, 'Debit Card', '2069', '12/2028').
-pago(70, 70, '2024-02-26 11:00:00', 2270, 'Bank Transfer', '2070', '12/2028').
-pago(71, 71, '2024-02-27 11:00:00', 2455, 'Cash', '2071', '12/2028').
-pago(72, 72, '2024-02-28 11:00:00', 2000, 'Credit Card', null, null).
+pago(70, 70, '2024-02-26 11:00:00', 2270, 'Bank Transfer', null, null).
+pago(71, 71, '2024-02-27 11:00:00', 2455, 'Cash', null, null).
+pago(72, 72, '2024-02-28 11:00:00', 2000, 'Credit Card', '2072', '12/2028').
 pago(73, 73, '2024-02-29 11:00:00', 2185, 'Debit Card', '2073', '12/2028').
-pago(74, 74, '2024-03-01 11:00:00', 2370, 'Bank Transfer', '2074', '12/2028').
-pago(75, 75, '2024-03-02 11:00:00', 1190, 'Cash', '2075', '12/2028').
-pago(76, 76, '2024-03-03 11:00:00', 1375, 'Credit Card', null, null).
+pago(74, 74, '2024-03-01 11:00:00', 2370, 'Bank Transfer', null, null).
+pago(75, 75, '2024-03-02 11:00:00', 1190, 'Cash', null, null).
+pago(76, 76, '2024-03-03 11:00:00', 1375, 'Credit Card', '2076', '12/2028').
 pago(77, 77, '2024-03-04 11:00:00', 1560, 'Debit Card', '2077', '12/2028').
-pago(78, 78, '2024-03-05 11:00:00', 1745, 'Bank Transfer', '2078', '12/2028').
-pago(79, 79, '2024-03-06 11:00:00', 1930, 'Cash', '2079', '12/2028').
-pago(80, 80, '2024-03-07 11:00:00', 1475, 'Credit Card', null, null).
+pago(78, 78, '2024-03-05 11:00:00', 1745, 'Bank Transfer', null, null).
+pago(79, 79, '2024-03-06 11:00:00', 1930, 'Cash', null, null).
+pago(80, 80, '2024-03-07 11:00:00', 1475, 'Credit Card', '2080', '12/2028').
 
 % ==============================================================
 % opinion/6: 40 originales + 40 agregados = 80
