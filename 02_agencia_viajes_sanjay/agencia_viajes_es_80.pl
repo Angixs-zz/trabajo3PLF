@@ -1275,3 +1275,196 @@ opinion(78, 78, 63, 3, 'Opinion de ejemplo de la reserva 78', '2024-03-27 13:00:
 opinion(79, 79, 64, 4, 'Opinion de ejemplo de la reserva 79', '2024-03-28 13:00:00').
 opinion(80, 80, 65, 5, 'Opinion de ejemplo de la reserva 80', '2024-03-29 13:00:00').
 
+/* ==============================================================
+   CONSULTAS COMPLEJAS - 2 POR CADA UNA DE LAS 14 TABLAS
+   Estas reglas forman parte del mismo archivo de la base de datos.
+   ============================================================== */
+
+:- use_module(library(aggregate)).
+:- use_module(library(lists)).
+
+% 01-02. UBICACION / ubicacion/4
+ubicaciones_con_alojamientos(Ciudad,Pais,Hotel,Tarifa) :-
+    ubicacion(Id,Ciudad,_,Pais),
+    alojamiento(_,Hotel,_,Tarifa,_,_,Id),
+    number(Tarifa),
+    Tarifa =< 400.
+
+rutas_entre_paises(PaisO,PaisD,Vuelo,Precio) :-
+    vuelo(_,Vuelo,_,Origen,Destino,_,_,_,Precio),
+    ubicacion(Origen,_,_,PaisO),
+    ubicacion(Destino,_,_,PaisD),
+    PaisO \= PaisD.
+
+% 03-04. PASAJERO / pasajero/6
+pasajeros_confirmados(Nombre,Grupo,Principal) :-
+    pasajero(Id,Nombre,_,_,_,_),
+    reserva_pasajero(ReservaId,Id,Principal),
+    reserva(ReservaId,Grupo,_,_,_,_,'Confirmed').
+
+pasajeros_satisfechos(Nombre,Grupo,Nota) :-
+    pasajero(Id,Nombre,_,_,_,_),
+    opinion(_,ReservaId,Id,Nota,_,_),
+    Nota >= 4,
+    reserva(ReservaId,Grupo,_,_,_,_,_).
+
+% 05-06. EMPLEADO / empleado/5
+agentes_confirmados(Agente,Grupo) :-
+    empleado(Id,Agente,_,_,_),
+    reserva(_,Grupo,_,_,Id,_,'Confirmed').
+
+carga_empleado(Agente,Cantidad) :-
+    empleado(Id,Agente,_,_,_),
+    aggregate_all(count,reserva(_,_,_,_,Id,_,_),Cantidad),
+    Cantidad > 0.
+
+% 07-08. ALOJAMIENTO / alojamiento/7
+tarifa_neta(Hotel,Ciudad,TarifaFinal) :-
+    alojamiento(_,Hotel,_,Tarifa,_,Descuento,Lugar),
+    ubicacion(Lugar,Ciudad,_,_),
+    number(Tarifa),
+    number(Descuento),
+    TarifaFinal is Tarifa*(1-Descuento).
+
+hospedajes_reservados(Grupo,Hotel,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_alojamiento(_,Id,AlojamientoId,_,_,Costo),
+    alojamiento(AlojamientoId,Hotel,_,_,_,_,_).
+
+% 09-10. TIPO DE TRANSPORTE / tipo_transporte/2
+tipos_utilizados(Tipo,Cantidad) :-
+    tipo_transporte(Id,Tipo),
+    aggregate_all(count,
+        reserva_transporte(_,_,Id,_,_,_,_),Cantidad),
+    Cantidad > 0.
+
+tipo_por_grupo(Grupo,Tipo,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,TipoId,_,_,_,Costo),
+    tipo_transporte(TipoId,Tipo).
+
+% 11-12. VUELO / vuelo/9
+itinerario_vuelo(Numero,Sale,Llega,Tarifa) :-
+    vuelo(_,Numero,_,Origen,Destino,_,_,_,Tarifa),
+    ubicacion(Origen,Sale,_,_),
+    ubicacion(Destino,Llega,_,_).
+
+vuelos_contratados(Grupo,Numero,Compania) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,_,VueloId,_,_,_),
+    VueloId \= null,
+    vuelo(VueloId,Numero,Compania,_,_,_,_,_,_).
+
+% 13-14. ALQUILER DE AUTO / alquiler_auto/8
+ruta_auto(Empresa,Tipo,Recogida,Entrega,Costo) :-
+    alquiler_auto(_,Empresa,Tipo,IdR,IdE,_,_,Costo),
+    ubicacion(IdR,Recogida,_,_),
+    ubicacion(IdE,Entrega,_,_).
+
+autos_contratados(Grupo,Empresa,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,_,_,AutoId,_,Costo),
+    AutoId \= null,
+    alquiler_auto(AutoId,Empresa,_,_,_,_,_,_).
+
+% 15-16. CRUCERO / crucero/8
+ruta_crucero(Barco,Salida,Llegada,Tarifa) :-
+    crucero(_,Barco,_,IdS,IdL,_,_,Tarifa),
+    ubicacion(IdS,Salida,_,_),
+    ubicacion(IdL,Llegada,_,_).
+
+cruceros_contratados(Grupo,Barco,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,_,_,_,CruceroId,Costo),
+    CruceroId \= null,
+    crucero(CruceroId,Barco,_,_,_,_,_,_).
+
+% 17-18. RESERVA / reserva/7
+reservas_completas(Grupo,Agente,Viajero) :-
+    reserva(Id,Grupo,_,_,Empleado,_,'Confirmed'),
+    empleado(Empleado,Agente,_,_,_),
+    reserva_pasajero(Id,Pasajero,_),
+    pasajero(Pasajero,Viajero,_,_,_,_).
+
+costo_calculado(Id,Grupo,Total) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    aggregate_all(sum(A),
+        reserva_alojamiento(_,Id,_,_,_,A),SumaA),
+    aggregate_all(sum(T),
+        reserva_transporte(_,Id,_,_,_,_,T),SumaT),
+    Total is SumaA+SumaT.
+
+% 19-20. RESERVA-PASAJERO / reserva_pasajero/3
+grupos_numerosos(Grupo,Cantidad) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    aggregate_all(count,
+        reserva_pasajero(Id,_,_),Cantidad),
+    Cantidad >= 2.
+
+titular_y_acompanantes(Grupo,Titular,Acompana) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_pasajero(Id,P1,true),
+    reserva_pasajero(Id,P2,false),
+    P1 \= P2,
+    pasajero(P1,Titular,_,_,_,_),
+    pasajero(P2,Acompana,_,_,_,_).
+
+% 21-22. RESERVA-ALOJAMIENTO / reserva_alojamiento/6
+estancia_por_grupo(Grupo,Hotel,Ciudad,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_alojamiento(_,Id,HotelId,_,_,Costo),
+    alojamiento(HotelId,Hotel,_,_,_,_,Lugar),
+    ubicacion(Lugar,Ciudad,_,_).
+
+estancias_costosas(Grupo,Hotel,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_alojamiento(_,Id,HotelId,_,_,Costo),
+    alojamiento(HotelId,Hotel,_,_,_,_,_),
+    Costo > 1000.
+
+% 23-24. RESERVA-TRANSPORTE / reserva_transporte/7
+transporte_de_reserva(Grupo,Tipo,Costo) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,TipoId,_,_,_,Costo),
+    tipo_transporte(TipoId,Tipo).
+
+vuelos_mas_caros_que_hotel(Grupo,Aereo,Hotel) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    reserva_transporte(_,Id,_,VueloId,_,_,Aereo),
+    VueloId \= null,
+    reserva_alojamiento(_,Id,_,_,_,Hotel),
+    Aereo > Hotel.
+
+% 25-26. PAGO / pago/7
+pagos_de_grupo(Grupo,Metodo,Importe) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    pago(_,Id,_,Importe,Metodo,_,_).
+
+monto_pagado(Grupo,Total) :-
+    reserva(Id,Grupo,_,_,_,_,_),
+    aggregate_all(sum(Monto),
+        pago(_,Id,_,Monto,_,_,_),Total).
+
+% 27-28. OPINION / opinion/6
+opiniones_contextualizadas(Cliente,Grupo,Nota) :-
+    opinion(_,Id,P,Nota,_,_),
+    pasajero(P,Cliente,_,_,_,_),
+    reserva(Id,Grupo,_,_,_,_,_).
+
+promedio_por_estado(Estado,Promedio) :-
+    findall(N,
+        (opinion(_,Id,_,N,_,_),
+         reserva(Id,_,_,_,_,_,Estado)),Notas),
+    Notas \= [],
+    sum_list(Notas,Suma),
+    length(Notas,Cantidad),
+    Promedio is Suma/Cantidad.
+
+/* EJEMPLOS DE EJECUCION
+?- ubicaciones_con_alojamientos(Ciudad,Pais,Hotel,Tarifa).
+?- pasajeros_confirmados(Nombre,Grupo,Principal).
+?- itinerario_vuelo(Numero,Origen,Destino,Tarifa).
+?- grupos_numerosos(Grupo,Cantidad).
+?- monto_pagado(Grupo,Total).
+?- promedio_por_estado(Estado,Promedio).
+*/

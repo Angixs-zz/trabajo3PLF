@@ -16,10 +16,12 @@ La traducción es de **nombres de predicados y comentarios de los campos**, no d
 
 La conversión no ejecuta claves foráneas, disparadores ni actualizaciones SQL al cargarla en Prolog. En particular, el SQL calcula después el costo total de las reservas con un `UPDATE`; en los hechos convertidos se conserva el valor inicial `null`. Las comprobaciones de relaciones hechas para esta entrega fueron **estáticas**, no una ejecución de MySQL o SWI-Prolog. Consulta `../documentacion/AUDITORIA.md`.
 
-**Carga una sola versión a la vez**. Ejemplo:
+**Para ejecutar la versión final basta cargar un solo archivo:**
 
 ```prolog
 ?- ['agencia_viajes_es_80.pl'].
-?- ubicacion(1, Ciudad, Estado, Pais).
-?- reserva_pasajero(Reserva, Pasajero, EsPrincipal).
+?- ubicacion(19, Ciudad, Estado, Pais).
+?- itinerario_vuelo(Numero, Origen, Destino, Tarifa).
+?- grupos_numerosos(Grupo, Cantidad).
+?- monto_pagado(Grupo, Total).
 ```
